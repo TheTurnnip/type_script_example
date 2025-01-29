@@ -39,8 +39,13 @@ Here is a quick guide:
 
 This project is meant to be a nice reference for new users to see what power TS has to offer. Each file covers some topic about TS and they are in order of best to read first.
 
-You can run the files in this project by using the command:
+First compile the TS using: `tsc -b`
+
+You can then run the files in this project by using the command:
 `node dist/file_name.js`
+Where file_name.js is the file that you want to run.
+
+You can also open the index.html file in a browser once the code is compiled and view the console.
 
 ### syntax.ts
 
