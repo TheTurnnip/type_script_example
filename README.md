@@ -13,7 +13,7 @@ Here is a quick guide:
 2. After that is installed you will want to run `npm install -g typescript`. This will allow you to use the type script compiler for any project.
 3. Make a file called tsconfig.json in the root of your project, and add the following content.
 
-```json
+```jsonc
 {
 	"compilerOptions": {
 		/* Visit https://aka.ms/tsconfig to read more about this file */
@@ -33,7 +33,7 @@ Here is a quick guide:
     - The `tsc` is the command used to run the type script compiler
     - The `-w` flag tells the compiler to watch for changes to the files. This means any files you save will be auto compiled.
 
-5. The compiled JS will be in the dist directory at the root of your project and you can now use JS that has been made type safe 🥳.
+5. The compiled JS will be in the dist directory at the root of your project and you can now use JS that has been made type safe 🥳
 
 ## How to use this project
 
