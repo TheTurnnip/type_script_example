@@ -26,7 +26,7 @@ let person: { name: string; age: number } = {
 	age: 43,
 };
 
-// Variables can also be give the type of a class or interface:
+// Variables can also be give the type of a class or interface.
 // Checkout the respective .ts files for examples of each.
 
 // How to add types to a function
@@ -54,7 +54,7 @@ let favoriteBook: any = "Harry Potter";
 // We can use the syntax:
 let myNumber: number | string = 67; // The | is used to separate the different allowed types
 
-// This does mean that we will have to do runtime, type checking
+// This does mean that we will have to do runtime type checking,
 // and to do so you use the typeof keyword.
 if (typeof myNumber === "number") {
 	console.log("My number is really a number.");

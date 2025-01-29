@@ -56,16 +56,15 @@ class Book {
 		this.pages = pages;
 	}
 
-	// Then we can add some methods to the class.
-	// These are just example methods, they do not have an actual logic to them.
-	public GetPage(pageNumber: number): string {
-		return "BLANK_PAGE";
-	}
-
+	// Then we can add some methods to the class:
 	public Read(): void {
-		// Logic would be here for a user to read a book.
-		// We are just going to log a message to the console in place of that.
-		console.log("Reading...");
+		// Here we use the map function to print out our full book.
+		this._pages.chapters.map((chapter) => {
+			console.log(chapter.title);
+			chapter.pages.map((page) => {
+				console.log(page);
+			});
+		});
 	}
 }
 
@@ -77,6 +76,14 @@ let layout: BookLayout = {
 			title: "Chapter1",
 			pages: ["Page1", "Page2", "Page3"],
 		},
+		{
+			title: "Chapter2",
+			pages: ["Page4", "Page5", "Page6"],
+		},
+		{
+			title: "Chapter3",
+			pages: ["Page5", "Page6", "Page7"],
+		},
 	],
 };
 
@@ -85,4 +92,3 @@ let myBook: Book = new Book("My Book", 1, layout);
 
 // We can then access the properties of the class:
 myBook.Read();
-console.log(myBook.GetPage(3));
