@@ -8,9 +8,13 @@
 interface BookLayout {
 	// Here we define the structure of a book.
 	// We have an array of chapters, with each chapter having a title and an array of pages.
+	bookTitle: string;
 	chapters: {
 		title: string;
-		pages: string[];
+		pages: {
+			pageNumber: number;
+			content: string;
+		}[];
 	}[];
 }
 
@@ -59,10 +63,14 @@ class Book {
 	// Then we can add some methods to the class:
 	public Read(): void {
 		// Here we use the map function to print out our full book.
+		console.log(`Title: ${this._pages.bookTitle}`);
+		console.log(`Book Length: ${this._pageCount}`);
 		this._pages.chapters.map((chapter) => {
-			console.log(chapter.title);
+			console.log(`Chapter Title: ${chapter.title}`);
 			chapter.pages.map((page) => {
-				console.log(page);
+				console.log(
+					`Page#: ${page.pageNumber}\nPage Content:\n${page.content}`
+				);
 			});
 		});
 	}
@@ -71,24 +79,43 @@ class Book {
 // using the class:
 // First we will make a book layout with the interface above:
 let layout: BookLayout = {
+	bookTitle: "Ryan's book",
 	chapters: [
 		{
-			title: "Chapter1",
-			pages: ["Page1", "Page2", "Page3"],
+			title: "Chapter 1",
+			pages: [
+				{
+					pageNumber: 1,
+					content: "This is page one of my book",
+				},
+				{
+					pageNumber: 2,
+					content: "This is page two of my book",
+				},
+				{
+					pageNumber: 3,
+					content: "This is page three of my book",
+				},
+			],
 		},
 		{
-			title: "Chapter2",
-			pages: ["Page4", "Page5", "Page6"],
-		},
-		{
-			title: "Chapter3",
-			pages: ["Page5", "Page6", "Page7"],
+			title: "Chapter 2",
+			pages: [
+				{
+					pageNumber: 4,
+					content: "This is page number 4",
+				},
+				{
+					pageNumber: 5,
+					content: "This is page number 5",
+				},
+			],
 		},
 	],
 };
 
 // Then we an make a new instance of the book class using a title, page count, and layout.
-let myBook: Book = new Book("My Book", 1, layout);
+let myBook: Book = new Book("My Book", 5, layout);
 
 // We can then access the properties of the class:
 myBook.Read();
